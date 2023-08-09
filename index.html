@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>Even odd App</title>
+	<style>
+		*{font-size:60px;}
+		body{background:lightyellow;}
+	</style>
+	<script>
+		function find()
+		{
+			event.preventDefault();
+			let num = document.getElementById("num");
+			let ans = document.getElementById("ans");
+			
+			if(num.value =="")
+			{
+				alert("please enter the number");
+				ans.innerHTML="";
+				num.focus();
+				return;
+			}
+			let n = parseInt(num.value);
+			let r = n % 2 == 0? "even" : "odd";
+			ans.innerHTML=r;
+		}
+		
+	</script>
+	</head>
+	<body>
+	<center>
+		<h1>Even Odd Number</h1>	
+		<form onsubmit="find()">
+		<input type="number" placeholder="Enter a integer" id="num"/>
+		<br><br>
+		<input type="submit" value="Find Even/Odd"/>
+		</form>
+		<h2 id="ans"></h2>
+	</center>
+
+	</body>
+
+</html>
